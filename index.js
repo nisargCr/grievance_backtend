@@ -7,6 +7,7 @@ const path = require("path");
 
 const userRoutes = require('./src/users/users.routes');
 const officerRoutes = require('./src/officer/officer.routes');
+const complaintRoutes = require('./src/complaint/complaint.routes');
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -28,6 +29,7 @@ app.use("/assets", express.static(path.join(__dirname, "assets")));
 
 userRoutes.routesConfig(app);
 officerRoutes.routesConfig(app);
+complaintRoutes.routesConfig(app);
 
 app.listen(process.env.PORT, () => { 
     console.log('Server is listening at ' + process.env.IP_ADDRESS +':%s', process.env.PORT); 

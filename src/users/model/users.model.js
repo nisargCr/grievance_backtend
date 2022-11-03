@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema({
     loginRPassword: { type: String, default: "" },
     loginType: { type: String, default: "" },
     appNo: { type: String, unique: true }, // imp
-    createdAt: { type: String, default: "" },
+    createdAt: { type: Date, default: Date.now },
     status: { type: String, default: "" },
 	
 },{timestamps:true})
