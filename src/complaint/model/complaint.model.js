@@ -3,9 +3,12 @@ const Schema = mongoose.Schema;
 
 const officerSchema = new Schema({
     // appNo: { type: String , default: Date.now(), unique : true},
-    userId:{
-        type:Schema.Types.ObjectId,
-        ref:'users'
+    // userId:{
+    //     type:Schema.Types.ObjectId,
+    //     ref:'users'
+    // },
+    complaintNo:{
+        type: String, unique: true
     },
     personName:{type:String},
     contactNumber: { type: String },
