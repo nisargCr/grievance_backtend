@@ -6,4 +6,5 @@ exports.createComplaint = (req, res) => Handler(req, res, service.createComplain
 exports.getComplaints = (req, res) => { Handler(req, res, service.getComplaints, 'Success', 'Save Failed'); }
 exports.getComplaintsByNo = (req, res) => { Handler(req, res, service.getComplaintsByNo, 'Success', 'Save Failed'); }
 exports.updateComplaints = (req, res) => { Handler(req, res, service.updateComplaints, 'Success', 'Save Failed'); }
+exports.fileUpload = (req, res) => { Handler(req, res, service.fileUpload, 'Success', 'Save Failed'); }
 //exports.reset =async (req,res)=> await reqHandler(req,res,service.resetPswrd)

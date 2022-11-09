@@ -16,6 +16,30 @@ exports.createComplaint = (req) => {
     }
 };
 
+exports.fileUpload = (req) => {
+    try {
+        console.log("coming here");
+        const [local, rest] = req.get("host").split(":");
+		let Url =
+        local === "localhost"
+        ? req.protocol + "://" + req.get("host") + "/complaints"
+        : "http://" + req.get("host") + "/complaints";
+        let tempObj= {
+            fileName:req.files.image[0].filename,
+            filePath:req.files.image[0].path,
+            downloadLink: `${Url}/${req.files.image[0].filename}`,
+			timeStamp:new Date()
+        }
+        return new Promise((resolve, reject) => {
+            resolve(tempObj);
+        })
+        
+
+    } catch (err) {
+        console.log("process error" + err.message);
+    }
+}
+
 exports.getComplaints = (req) => {
     try {
         return new Promise((resolve, reject) => {
