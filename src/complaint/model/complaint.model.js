@@ -12,7 +12,7 @@ const officerSchema = new Schema({
     },
     personName:{type:String},
     contactNumber: { type: String },
-    emailId: { type: String },
+    email: { type: String },
     district: { type: String },
     mandal: { type: String },
     sro: { type: String },
