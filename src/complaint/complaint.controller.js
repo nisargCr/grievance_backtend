@@ -43,7 +43,7 @@ exports.fileUpload = (req) => {
 exports.getComplaints = (req) => {
     try {
         return new Promise((resolve, reject) => {
-            complaintModel.find({})
+            complaintModel.find({}).sort({createdAt:-1})
                 .then(response => {
                     if (response){
                         resolve(response);
